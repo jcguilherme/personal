@@ -1,0 +1,13 @@
+br\com\prestador\servico\personal\entity\Treino.class
+br\com\prestador\servico\personal\jersey\config\JerseyConfig.class
+br\com\prestador\servico\personal\entity\DadoBancario.class
+br\com\prestador\servico\personal\dao\IUsuarioDAO.class
+br\com\prestador\servico\personal\service\IUsuarioService.class
+br\com\prestador\servico\personal\service\UsuarioService.class
+br\com\prestador\servico\personal\endpoint\UsuarioEndpoint.class
+br\com\prestador\servico\personal\dao\UsuarioDAO.class
+br\com\prestador\servico\personal\teste\JerseyClient.class
+br\com\prestador\servico\personal\teste\JerseyClient$1.class
+br\com\prestador\servico\personal\filter\CORSFilter.class
+br\com\prestador\servico\personal\start\ApplicationStarter.class
+br\com\prestador\servico\personal\entity\Usuario.class
