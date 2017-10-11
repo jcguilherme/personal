@@ -1,0 +1,12 @@
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/jersey/config/JerseyConfig.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/dao/IUsuarioDAO.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/entity/DadoBancario.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/teste/JerseyClient.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/filter/CORSFilter.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/entity/Treino.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/endpoint/UsuarioEndpoint.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/service/UsuarioService.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/service/IUsuarioService.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/dao/UsuarioDAO.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/entity/Usuario.java
+/home/jose.guilherme/heroku/personal/src/main/java/br/com/prestador/servico/personal/ApplicationStarter.java
