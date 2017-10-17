@@ -1,4 +1,5 @@
 package br.com.prestador.servico.personal.filter;
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -7,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.Ordered;
@@ -25,6 +27,13 @@ public class CORSFilter implements Filter {
 	        httpResponse.setHeader("Access-Control-Expose-Headers", "custom-header1, custom-header2");
         	httpResponse.setHeader("Access-Control-Allow-Credentials", "false");
 	        httpResponse.setHeader("Access-Control-Max-Age", "4800");
+	        
+	        
+	        
+	        WrappedRequest wrappedRequest = new WrappedRequest((HttpServletRequest)request);
+	        System.out.println(wrappedRequest._body);
+	        //target = ParseExtDirectTargetFrom(wrappedRequest);
+	        request = wrappedRequest;
 	        chain.doFilter(request, response);
 	}
 	@Override

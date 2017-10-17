@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import br.com.prestador.servico.personal.entity.Usuario;
 
 public class JerseyClient {
-	private static final String urlBase = "http://localhost:8080/personal";
+	private static final String urlBase = "http://10.1.25.42:8080/personal";
 	public void getUsuarioDetails() {
 		Client client = ClientBuilder.newClient();
 		WebTarget base = client.target(urlBase+"/usuario");
@@ -83,7 +83,6 @@ public class JerseyClient {
 		WebTarget deleteById = base.path("{id}").resolveTemplate("id", UsuarioId);
 		Response response = deleteById.request(MediaType.APPLICATION_JSON)
 				.delete();
-		
 		System.out.println("Response Http Status: "+ response.getStatus());
 		if(response.getStatus() == 204) {
 			System.out.println("Data deleted successfully.");
@@ -98,8 +97,8 @@ public class JerseyClient {
 	public static void main(String[] args) {
 		jerseyClient = new JerseyClient();
 		jerseyClient.inserirRegistros();
-		jerseyClient.listarRegistros();
-		jerseyClient.atualizaRegistros();
+		//jerseyClient.listarRegistros();
+		//jerseyClient.atualizaRegistros();
 	}
 	
 	
