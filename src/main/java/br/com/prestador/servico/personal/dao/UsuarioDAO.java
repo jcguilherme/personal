@@ -1,10 +1,15 @@
 package br.com.prestador.servico.personal.dao;
+import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
 import br.com.prestador.servico.personal.entity.Usuario;
+import br.com.prestador.servico.personal.util.Distancia;
 
 @Transactional
 @Repository
@@ -50,5 +55,19 @@ public class UsuarioDAO implements IUsuarioDAO {
 		int count = entityManager.createQuery(hql).setParameter(1, email)
 		              .getResultList().size();
 		return count > 0 ? true : false;
+	}
+	
+	
+	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) {
+		String hql = "FROM Usuario as usr ORDER BY usr.id";
+		Usuario usr = entityManager.find(Usuario.class, idUsuario);
+		List<Usuario>usuarios = (List<Usuario>) entityManager.createQuery(hql).getResultList();
+		List<Usuario>usuariosProximos = new ArrayList<Usuario>();
+		for(Usuario usrbd : usuarios){
+			if(Distancia.distance(usr.getLati(), usrbd.getLati(), usr.getLongi(), usrbd.getLongi(), 0, 0) <= distanciaKm){
+				usuariosProximos.add(usrbd);
+			}
+		}
+		return usuariosProximos;
 	}
 }

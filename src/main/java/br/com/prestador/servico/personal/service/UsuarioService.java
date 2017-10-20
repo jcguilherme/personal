@@ -45,4 +45,8 @@ public class UsuarioService implements IUsuarioService {
 	public void deleteUsuario(int UsuarioId) {
 		UsuarioDAO.deleteUsuario(UsuarioId);
 	}
+	
+	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) {
+		return UsuarioDAO.getAllUsuariosProximos(distanciaKm, idUsuario);
+	}
 }

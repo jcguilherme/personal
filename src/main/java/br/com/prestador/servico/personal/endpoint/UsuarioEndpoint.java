@@ -37,6 +37,13 @@ public class UsuarioEndpoint {
 		return Response.ok(list).build();
 	}
 	@GET
+	@Path("/usuariosProximos")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getUsuarioDetails(long idUsuario) {
+		List<Usuario> list = UsuarioService.getAllUsuariosProximos(5d, idUsuario);  
+		return Response.ok(list).build();
+	}
+	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getUsuarioById(@PathParam("id") Integer id) {

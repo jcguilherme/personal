@@ -11,4 +11,5 @@ public interface IUsuarioService {
      public boolean addUsuario(Usuario Usuario);
      public void updateUsuario(Usuario Usuario);
      public void deleteUsuario(int UsuarioId);
+ 	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario);
 }
