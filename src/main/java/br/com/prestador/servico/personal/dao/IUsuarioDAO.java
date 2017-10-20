@@ -10,5 +10,6 @@ public interface IUsuarioDAO {
     public void updateUsuario(Usuario Usuario);
     public void deleteUsuario(int UsuarioId);
     public boolean UsuarioExists(String email);
+	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) ;
 }
  
