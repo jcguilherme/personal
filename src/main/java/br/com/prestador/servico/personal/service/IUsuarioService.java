@@ -13,4 +13,5 @@ public interface IUsuarioService {
      public void updateUsuario(Usuario Usuario);
      public void deleteUsuario(int UsuarioId);
  	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario);
+	public void apagarVazios();
 }

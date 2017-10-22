@@ -12,5 +12,6 @@ public interface IUsuarioDAO {
     public void deleteUsuario(int UsuarioId);
     public boolean UsuarioExists(String email);
 	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) ;
+	public void apagarVazios();
 }
  

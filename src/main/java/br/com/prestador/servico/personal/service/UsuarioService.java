@@ -54,4 +54,9 @@ public class UsuarioService implements IUsuarioService {
 	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) {
 		return UsuarioDAO.getAllUsuariosProximos(distanciaKm, idUsuario);
 	}
+	@Override
+	public void apagarVazios() {
+		UsuarioDAO.apagarVazios();
+		
+	}
 }

@@ -80,4 +80,9 @@ public class UsuarioDAO implements IUsuarioDAO {
 		}
 		return usuariosProximos;
 	}
+	@Override
+	public void apagarVazios() {
+		String hql = "delete FROM Usuario as usr WHERE usr.email is null ";
+		entityManager.createQuery(hql).executeUpdate();
+	}
 }
