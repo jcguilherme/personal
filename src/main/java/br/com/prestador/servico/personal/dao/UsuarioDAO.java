@@ -43,6 +43,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 		Usuario usr = getUsuarioById(usuario.getId());
 		usr.setLati(usuario.getLati());
 		usr.setLongi(usuario.getLongi());
+		usr.setToken(usuario.getToken());
 		//artcl.setTitle(Usuario.getTitle());
 		//artcl.setCategory(Usuario.getCategory());
 		entityManager.flush();
