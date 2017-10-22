@@ -37,6 +37,13 @@ public class UsuarioEndpoint {
 		return Response.ok(list).build();
 	}
 	@GET
+	@Path("/usuariosProximos")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getUsuarioDetails(long idUsuario) {
+		List<Usuario> list = UsuarioService.getAllUsuariosProximos(5d, idUsuario);  
+		return Response.ok(list).build();
+	}
+	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getUsuarioById(@PathParam("id") Integer id) {
@@ -67,6 +74,18 @@ public class UsuarioEndpoint {
 	@Consumes(MediaType.APPLICATION_JSON)	
 	public Response updateUsuario(Usuario Usuario) {
 		UsuarioService.updateUsuario(Usuario);
+		return Response.ok(Usuario).build();
+	}
+	
+	@POST
+	@Path("/updateCoordenada")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)	
+	public Response updateUsuarioCoordenada(Usuario Usuario) {
+		Usuario usr = UsuarioService.getUsuarioByIdFace(Usuario.getIdFace());
+		usr.setLati(Usuario.getLati());
+		usr.setLongi(Usuario.getLongi());
+		UsuarioService.updateUsuario(usr);
 		return Response.ok(Usuario).build();
 	}
 	@DELETE

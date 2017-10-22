@@ -77,6 +77,20 @@ public class JerseyClient {
         
 	    client.close();
 	}
+	
+	public void updateUsuarioCoordenada(Usuario Usuario) {
+		Client client = ClientBuilder.newClient();
+		WebTarget base = client.target(urlBase+"/usuario");
+		WebTarget update = base.path("updateCoordenada");
+		Response response = update.request(MediaType.APPLICATION_JSON)
+				.put(Entity.json(Usuario));
+		
+		System.out.println("Response Http Status: "+ response.getStatus());
+		Usuario resUsuario = response.readEntity(Usuario.class);
+		System.out.println(resUsuario.getId()+", "+ resUsuario.getEmail());
+        
+	    client.close();
+	}
 	public void deleteUsuario(int UsuarioId) {
 		Client client = ClientBuilder.newClient();
 		WebTarget base = client.target(urlBase+"/Usuario");
@@ -98,8 +112,12 @@ public class JerseyClient {
 	public static void main(String[] args) {
 		jerseyClient = new JerseyClient();
 		jerseyClient.inserirRegistros();
-		jerseyClient.listarRegistros();
-		jerseyClient.atualizaRegistros();
+		//jerseyClient.listarRegistros();
+		Usuario usr = new Usuario();
+		usr.setIdFace("xxx");
+		usr.setLati(999);
+		usr.setLongi(888);
+		jerseyClient.updateUsuarioCoordenada(usr);
 	}
 	
 	
@@ -108,14 +126,17 @@ public class JerseyClient {
 		
 		Usuario Usuario = new Usuario();
 		Usuario.setEmail("um@teste");
+		Usuario.setIdFace("xxx");
 		jerseyClient.addUsuario(Usuario);
 		
 		Usuario = new Usuario();
 		Usuario.setEmail("dois@teste");
+		Usuario.setIdFace("yyy");
 		jerseyClient.addUsuario(Usuario);
 		
 		Usuario = new Usuario();
 		Usuario.setEmail("tres@teste");
+		Usuario.setIdFace("zzz");
 		jerseyClient.addUsuario(Usuario);
 		
 	}

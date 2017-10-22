@@ -49,6 +49,13 @@ java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency> 
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20160810</version>
+</dependency>
+        
 	</dependencies> 
 	<build>
 		<plugins>

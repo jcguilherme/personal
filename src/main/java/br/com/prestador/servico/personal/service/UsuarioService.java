@@ -45,4 +45,13 @@ public class UsuarioService implements IUsuarioService {
 	public void deleteUsuario(int UsuarioId) {
 		UsuarioDAO.deleteUsuario(UsuarioId);
 	}
+	@Override
+	public Usuario getUsuarioByIdFace(String idFace) {
+		Usuario obj = UsuarioDAO.getUsuarioByIdFace(idFace);
+		return obj;
+	}
+
+	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) {
+		return UsuarioDAO.getAllUsuariosProximos(distanciaKm, idUsuario);
+	}
 }

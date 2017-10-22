@@ -22,7 +22,9 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
-    private long id;  
+    private long id; 
+	@Column(name="id_face")
+    private String idFace; 
 	@Column(name="email")
     private String email;
 	@Column(name="lati")
@@ -83,5 +85,11 @@ public class Usuario {
 	}
 	public void setTreinoProfessor(List<Treino> treinoProfessor) {
 		this.treinoProfessor = treinoProfessor;
+	}
+	public String getIdFace() {
+		return idFace;
+	}
+	public void setIdFace(String idFace) {
+		this.idFace = idFace;
 	}
 }
