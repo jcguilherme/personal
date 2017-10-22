@@ -12,7 +12,8 @@ import org.json.JSONObject;
 public class Notificacao {
 
 	public final static String AUTH_KEY_FCM = "AIzaSyBMRGkO2Ti5TEBTVbyVtxqtrC3KC0KsnCU";
-	public final static String API_URL_FCM = "https://personal-561f5.firebaseio.com";
+//	public final static String API_URL_FCM = "https://personal-561f5.firebaseio.com";
+	public final static String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
 
 	public void teste() {
 		try {
