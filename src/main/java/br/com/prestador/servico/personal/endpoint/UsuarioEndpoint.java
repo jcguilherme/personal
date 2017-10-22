@@ -114,4 +114,11 @@ public class UsuarioEndpoint {
 		}
 		return Response.ok().build();
 	}
+	@GET
+	@Path("/apagarVazios")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response apagarVazios() {
+		UsuarioService.apagarVazios();
+		return Response.ok().build();
+	}
 }
