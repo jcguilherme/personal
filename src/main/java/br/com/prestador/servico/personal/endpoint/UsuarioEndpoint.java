@@ -39,7 +39,7 @@ public class UsuarioEndpoint {
 	@GET
 	@Path("/usuariosProximos")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getUsuarioDetails(long idUsuario) {
+	public Response getUsuarioDetails(@PathParam("id") Integer idUsuario) {
 		List<Usuario> list = UsuarioService.getAllUsuariosProximos(5d, idUsuario);  
 		return Response.ok(list).build();
 	}
@@ -95,4 +95,12 @@ public class UsuarioEndpoint {
 		UsuarioService.deleteUsuario(id);
 		return Response.noContent().build();
 	}	
+	
+	@GET
+	@Path("/enviaNotificacao")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response notificacao() {
+		new Notificacao().teste();
+		return Response.ok().build();
+	}
 }

@@ -14,10 +14,9 @@ public class Notificacao {
 	public final static String AUTH_KEY_FCM = "AIzaSyBMRGkO2Ti5TEBTVbyVtxqtrC3KC0KsnCU";
 	public final static String API_URL_FCM = "https://personal-561f5.firebaseio.com";
 
-	public static void teste() {
+	public void teste() {
 		try {
-			new Notificacao()
-					.sendPushNotification("eGhbD4esYKM:APA91bHwPYgHquLBC4u76SybGoRBHKQMk8Sw-aWcNG9Z3w9K5qwYXqgUQozCpBFFdKSLiOy2XfA6qMJU-JHjL6uahGS_u4PB609ApMyejtAolGCuAW24cLIU5HM8hv9TUWXPAdD_U1xC");
+			sendPushNotification("eGhbD4esYKM:APA91bHwPYgHquLBC4u76SybGoRBHKQMk8Sw-aWcNG9Z3w9K5qwYXqgUQozCpBFFdKSLiOy2XfA6qMJU-JHjL6uahGS_u4PB609ApMyejtAolGCuAW24cLIU5HM8hv9TUWXPAdD_U1xC");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
