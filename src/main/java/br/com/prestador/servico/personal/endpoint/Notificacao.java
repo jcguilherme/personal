@@ -42,8 +42,8 @@ public class Notificacao {
 
 		json.put("to", deviceToken.trim());
 		JSONObject info = new JSONObject();
-		info.put("title", "notification title"); // Notification title
-		info.put("data", "teste"); // Notification
+		info.put("title", "Fulano está buscando um Treinador"); // Notification title
+		info.put("data", "Estou buscando um treinador para treinar peito"); // Notification
 									// body
 		json.put("notification", info);
 		try {

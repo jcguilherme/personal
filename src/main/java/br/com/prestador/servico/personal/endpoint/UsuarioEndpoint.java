@@ -1,5 +1,6 @@
 package br.com.prestador.servico.personal.endpoint;
 
+import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 
@@ -101,7 +102,16 @@ public class UsuarioEndpoint {
 	@Path("/enviaNotificacao")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response notificacao() {
-		new Notificacao().teste();
+		List<Usuario> list = UsuarioService.getAllUsuarios();
+		Notificacao notificacao = new Notificacao();
+		for(Usuario usr : list){
+		 try {
+			notificacao.sendPushNotification(usr.getToken());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
 		return Response.ok().build();
 	}
 }
