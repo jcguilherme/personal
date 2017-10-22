@@ -85,6 +85,7 @@ public class UsuarioEndpoint {
 		Usuario usr = UsuarioService.getUsuarioByIdFace(Usuario.getIdFace());
 		usr.setLati(Usuario.getLati());
 		usr.setLongi(Usuario.getLongi());
+		usr.setToken(Usuario.getToken());
 		UsuarioService.updateUsuario(usr);
 		return Response.ok(Usuario).build();
 	}

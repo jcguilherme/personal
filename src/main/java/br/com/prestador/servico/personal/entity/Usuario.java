@@ -31,6 +31,9 @@ public class Usuario {
     private double lati;
 	@Column(name="longi")
     private double longi;
+	@Column(name="token")
+	private String token;
+	
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dado_bancario_id")
 	private DadoBancario dadoBancario;
@@ -91,5 +94,11 @@ public class Usuario {
 	}
 	public void setIdFace(String idFace) {
 		this.idFace = idFace;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 }
