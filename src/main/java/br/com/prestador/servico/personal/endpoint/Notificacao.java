@@ -17,7 +17,7 @@ public class Notificacao {
 
 	public void teste() {
 		try {
-			sendPushNotification("eGhbD4esYKM:APA91bHwPYgHquLBC4u76SybGoRBHKQMk8Sw-aWcNG9Z3w9K5qwYXqgUQozCpBFFdKSLiOy2XfA6qMJU-JHjL6uahGS_u4PB609ApMyejtAolGCuAW24cLIU5HM8hv9TUWXPAdD_U1xC");
+			sendPushNotification("fjKDkdkzje4:APA91bEo6i5vtXBxvaznpt7MArapSuY_bv0o-Eci8xDMNL8S89HFxNIR-TK2HF1Fu0x7m2fn7O2Gy8VJuRqTab6xNBBoTxFmDSJX40hn9C2efWYQuMlO7HpnmTT2XFPn4DF8vnV-WeCy");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
