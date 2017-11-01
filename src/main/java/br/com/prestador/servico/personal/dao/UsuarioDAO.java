@@ -69,9 +69,9 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 	
 	public List<Usuario> getAllUsuariosProximos(double distanciaKm, long idUsuario) {
-		String hql = "FROM Usuario as usr ORDER BY usr.id";
+		String hql = "FROM Usuario as usr where id != ? and aluno = false ORDER BY usr.id ";
 		Usuario usr = entityManager.find(Usuario.class, idUsuario);
-		List<Usuario>usuarios = (List<Usuario>) entityManager.createQuery(hql).getResultList();
+		List<Usuario>usuarios = (List<Usuario>) entityManager.createQuery(hql).setParameter(1, idUsuario).getResultList();
 		List<Usuario>usuariosProximos = new ArrayList<Usuario>();
 		for(Usuario usrbd : usuarios){
 			if(Distancia.distance(usr.getLati(), usrbd.getLati(), usr.getLongi(), usrbd.getLongi(), 0, 0) <= distanciaKm){

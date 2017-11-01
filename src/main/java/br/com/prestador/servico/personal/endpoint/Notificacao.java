@@ -9,23 +9,18 @@ import java.net.URL;
 
 import org.json.JSONObject;
 
+import br.com.prestador.servico.personal.entity.Usuario;
+
 public class Notificacao {
 
 	public final static String AUTH_KEY_FCM = "AIzaSyAf8vyh19RB4uXewIdyS1sycePjggu3TUA";
 //	public final static String API_URL_FCM = "https://personal-561f5.firebaseio.com";
 	public final static String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
 
-	public void teste() {
-		try {
-			sendPushNotification("fjKDkdkzje4:APA91bEo6i5vtXBxvaznpt7MArapSuY_bv0o-Eci8xDMNL8S89HFxNIR-TK2HF1Fu0x7m2fn7O2Gy8VJuRqTab6xNBBoTxFmDSJX40hn9C2efWYQuMlO7HpnmTT2XFPn4DF8vnV-WeCy");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 	
-	public String sendPushNotification(String deviceToken) throws IOException {
+	public String sendPushNotification(Usuario usr) throws IOException {
 		String result = "";
 		URL url = new URL(API_URL_FCM);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -40,9 +35,9 @@ public class Notificacao {
 
 		JSONObject json = new JSONObject();
 
-		json.put("to", deviceToken.trim());
+		json.put("to", usr.getToken().trim());
 		JSONObject info = new JSONObject();
-		info.put("title", "Fulano está buscando um Treinador"); // Notification title
+		info.put("title", usr.getNome()+" está buscando um Treinador"); // Notification title
 		info.put("data", "Estou buscando um treinador para treinar peito"); // Notification
 									// body
 		json.put("notification", info);

@@ -40,8 +40,18 @@ public class UsuarioEndpoint {
 	@GET
 	@Path("/usuariosProximos")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getUsuarioDetails(@PathParam("id") Integer idUsuario) {
-		List<Usuario> list = UsuarioService.getAllUsuariosProximos(5d, idUsuario);  
+	public Response getUsuarioProximos(@PathParam("id") Integer idUsuario,@PathParam("distancia") Integer distancia, @PathParam("dataHora")String dataHora) {
+		idUsuario = new Integer(1);
+		List<Usuario> list = UsuarioService.getAllUsuariosProximos(1000d, idUsuario);
+		Notificacao notificacao = new Notificacao();
+		for(Usuario usr : list){
+			 try {
+				notificacao.sendPushNotification(usr);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
 		return Response.ok(list).build();
 	}
 	@GET
@@ -102,15 +112,23 @@ public class UsuarioEndpoint {
 	@Path("/enviaNotificacao")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response notificacao() {
-		List<Usuario> list = UsuarioService.getAllUsuarios();
+		/*List<Usuario> list = UsuarioService.getAllUsuarios();
 		Notificacao notificacao = new Notificacao();
 		for(Usuario usr : list){
 		 try {
-			notificacao.sendPushNotification(usr.getToken());
+			notificacao.sendPushNotification(usr);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		}
+		*/
+		Usuario usr = UsuarioService.getUsuarioByEmail("jcguilherme@gmail.com");
+		try {
+			new Notificacao().sendPushNotification(usr);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return Response.ok().build();
 	}

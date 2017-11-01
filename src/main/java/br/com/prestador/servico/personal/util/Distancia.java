@@ -2,6 +2,11 @@ package br.com.prestador.servico.personal.util;
 
 public class Distancia {
 
+	public static void main(String[] args) {
+		Double d = new Distancia().distance(-15.795896, -15.795158, -47.896054, -47.897417, 0, 0);
+		System.out.println(d);
+	}
+	
 	public static double distance(double lat1, double lat2, double lon1,
 	        double lon2, double el1, double el2) {
 

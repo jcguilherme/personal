@@ -33,7 +33,10 @@ public class Usuario {
     private double longi;
 	@Column(name="token")
 	private String token;
-	
+	@Column(name="aluno")
+	private boolean aluno;
+	@Column(name="nome")
+	private String nome;
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dado_bancario_id")
 	private DadoBancario dadoBancario;
@@ -100,5 +103,17 @@ public class Usuario {
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}
+	public boolean isAluno() {
+		return aluno;
+	}
+	public void setAluno(boolean aluno) {
+		this.aluno = aluno;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }

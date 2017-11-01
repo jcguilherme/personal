@@ -114,8 +114,20 @@ public class JerseyClient {
 		//jerseyClient.listarRegistros();
 		Usuario usr = new Usuario();
 		usr.setIdFace("xxx");
-		usr.setLati(999);
-		usr.setLongi(888);
+		usr.setLati(-15.8405767);
+		usr.setLongi(-48.0364833);
+		jerseyClient.updateUsuarioCoordenada(usr);
+		
+		usr = new Usuario();
+		usr.setIdFace("yyy");
+		usr.setLati(-15.8405674);
+		usr.setLongi(-48.0366769);
+		jerseyClient.updateUsuarioCoordenada(usr);
+		
+		usr = new Usuario();
+		usr.setIdFace("yyy");
+		usr.setLati(-15.8076807);
+		usr.setLongi(-48.0701597);
 		jerseyClient.updateUsuarioCoordenada(usr);
 		//jerseyClient.atualizaRegistros();
 	}
